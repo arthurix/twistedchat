@@ -1,0 +1,35 @@
+<div class="chat">
+    <div class="row">
+        <div class="col-md-7">
+            <div id="messages">
+                <% @messages.each do |message| %>
+                    <p><strong><%=message.username%>:</strong> <%=message.text %></p>
+                <% end %>
+            </div>
+        </div>
+
+        <div class="col-md-5">
+            <div id="users">
+                <p><strong></strong></p>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <div class="row">
+                <%=form_for @message, remote: true, authenticity_token: true do |f|%>
+                    <div class="col-md-7" id="input">
+                        <%= f.label :your_message%>:
+                        <%= f.text_area :text, class: "form-control", data: {textarea: "message"}%>
+                    </div>
+                    <div class="col-md-2">
+                        <%= f.submit "send", class: "btn btn-primary", data: {send: "message"}%>
+                    </div>
+                <%end%>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+

@@ -1,0 +1,13 @@
+<h2>Authentication</h2>
+<div class="row">
+        <%= form_for(User.new, url: login_path) do |f| %>
+            <div class="form-group">
+                <%=f.label :username%>
+                <div class="input-group">
+                    <span class="input-group-addon">@</span>
+                    <%= f.text_field :username, class: "form-control" %>
+                </div>
+            </div>
+            <%= f.submit "Enter", class: "btn btn-primary" %>
+        <% end %>
+</div>
