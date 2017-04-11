@@ -1,26 +1,27 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>TwistedChat</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-  <%= csrf_meta_tags %>
-</head>
-<body>
-  <nav class="navbar navbar-toggleable-md navbar-inverse bg-inverse mb-4">
-    <a class="navbar-brand" href="#">TwistedChat</a>
-    <div class="collapse navbar-collapse" id="navbarCollapse">
-      <ul class="navbar-nav mr-auto">
-          <li class="nav-item active">
-          </li>
-            <li><%= link_to 'Sign out', logout_path, :method=>'delete' %></li>
-        </ul>
-    </div>
+    <head>
+        <title>TwistedChat</title>
+        <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+        <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+        <%= csrf_meta_tags %>
+    </head>
+    <body>
+        <nav class="navbar navbar-toggleable-md navbar-inverse bg-primary mb-4">
+            <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <a class="navbar-brand" href="#">TwistedChat</a>
+            <div class="collapse navbar-collapse" id="navbarCollapse">
+                <div class="navbar-nav">
+                    <%= link_to 'Log out', logout_path, :method=>'delete', class: 'nav-item nav-link' %>
+                </div>
+            </div>
 
-  </nav>
-  <div class="container">
-    <%= render partial: 'layouts/flash_messages'%>
-    <%= yield %>
-  </div>
-</body>
+        </nav>
+        <div class="container">
+            <%= render partial: 'layouts/flash_messages'%>
+            <%= yield %>
+        </div>
+    </body>
 </html>

@@ -1,35 +1,37 @@
-<div class="chat">
-    <div class="row">
-        <div class="col-md-7">
-            <div id="messages">
-                <% @messages.each do |message| %>
-                    <p><strong><%=message.username%>:</strong> <%=message.text %></p>
-                <% end %>
+<div class="row">
+    <div class="col">
+        <div class="card">
+            <div class="card-header">Chat</div>
+            <div class="card-block">
+                <div id="messages">
+                    <% @messages.each do |message| %>
+                        <p class="card-text"><strong><%=message.username%>:</strong> <%=message.text %></p>
+                    <% end %>
+                </div>
             </div>
-        </div>
-
-        <div class="col-md-5">
-            <div id="users">
-                <p><strong></strong></p>
-            </div>
-        </div>
-    </div>
-    <div class="row">
-        <div class="col-md-12">
-            <div class="row">
+            <div class="card-footer">
                 <%=form_for @message, remote: true, authenticity_token: true do |f|%>
-                    <div class="col-md-7" id="input">
-                        <%= f.label :your_message%>:
-                        <%= f.text_area :text, class: "form-control", data: {textarea: "message"}%>
-                    </div>
-                    <div class="col-md-2">
-                        <%= f.submit "send", class: "btn btn-primary", data: {send: "message"}%>
-                    </div>
+                        <div class="input-group">
+                            <%= f.text_area :text, class: "form-control", cols: 40, rows: 3, data: {textarea: "message"}%>
+                            <div class="input-group-btn">
+                                <%= f.submit "Send", class: "btn btn-primary", data: {send: "message"}%>
+
+                            </div>
+                        </div>
                 <%end%>
             </div>
         </div>
     </div>
+    <div class="col-sm-4">
+        <div class="card">
+            <div class="card-header">Users</div>
+            <div class="card-block">
+                <div id="users">
+                    <p><strong></strong></p>
+                </div> 
+            </div>
+        </div>
+    </div>
 </div>
-
 
 
