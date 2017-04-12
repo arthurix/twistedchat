@@ -18,15 +18,16 @@ gem 'jquery-rails'
 gem 'jquery-ui-rails'
 gem 'turbolinks', '~> 5'
 gem 'jbuilder', '~> 2.5'
+gem 'rest-client', '~> 2.0.1'
 group :development, :test do
   gem 'byebug', platform: :mri
+  gem 'pry-byebug'
 end
 
 group :development do
+  gem 'rubocop'
   gem 'web-console', '>= 3.3.0'
   gem 'listen', '~> 3.0.5'
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
-  gem 'pry-byebug'
 end
-gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]

@@ -1,0 +1,3 @@
+class BinaryCode < Base
+  
+end

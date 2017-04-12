@@ -21,11 +21,13 @@ class UsersController < ApplicationController
   end
 
   private
-  def login
-      session[:username] = @user.username if @user.valid?
-    end
 
-    def user_params
-      params.require(:user).permit(:username)
-    end
+  def login
+    session[:username] = @user.username if @user.valid?
+    session[:dialect]  = @user.dialect if @user.valid?
+  end
+
+  def user_params
+    params.require(:user).permit(:username, :dialect)
+  end
 end
