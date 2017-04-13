@@ -4,7 +4,7 @@ class Message < ApplicationRecord
   end
 
   def dispatch
-    clazz ||= class_eval(self.dialect.to_s.capitalize)
-    clazz.new(self.text)
+    clazz ||= class_eval(dialect.to_s.capitalize)
+    clazz.new(text, dialect)
   end
 end

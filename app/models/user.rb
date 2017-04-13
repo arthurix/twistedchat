@@ -7,7 +7,7 @@ class User
 
   validates :username, :presence => true
   validates :dialect, :presence => true
-  validates_inclusion_of :dialect, :in => %w(yoda valley_girl binary), :allow_nil => false
+  validates_inclusion_of :dialect, :in => %w(yoda valley binary), :allow_nil => false
 
   def initialize(attributes = {})
     attributes.each do |name, value|

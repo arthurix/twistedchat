@@ -1,3 +1,0 @@
-class ValleyGirl < Base
-  
-end
