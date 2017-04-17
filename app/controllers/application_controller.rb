@@ -1,29 +1,19 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
-
   before_action :authenticate_user!
-  helper_method :current_user, :logged_in?
-  before_action :register_user
-
-
-  def current_user
-    @current_user ||= session[:username] if session[:username]
-  end
+  include ApplicationHelper
 
   def logged_in?
     !!current_user
   end
 
+  def redirect_logged_in?
+    redirect_to messages_path and return if logged_in?
+  end
+
   protected
 
   def authenticate_user!
-    redirect_to login_path unless logged_in?
-  end
-
-  def register_user
-    username = current_user
-    ActionCable.server.broadcast 'users',
-                                 user: current_user,
-                                 username: current_user
+    redirect_to login_path and return unless logged_in?
   end
 end

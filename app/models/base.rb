@@ -5,7 +5,7 @@ class Base
   end
 
   def base_uri
-    'http://www.degraeve.com/cgi-bin/babel.cgi'
+    API[:base_uri]
   end
 
   def translate
@@ -20,7 +20,7 @@ class Base
   end
 
   def parse(result)
-    page = Nokogiri::HTML(result)
-    page.search("blockquote").last.text
+    text = HtmlParser.new(result.body)
+    text.search("blockquote")
   end
 end

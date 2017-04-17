@@ -1,0 +1,185 @@
+body {
+  font-family: "Calibri", "Roboto", sans-serif;
+}
+
+.card-header.title {
+  text-align: center;
+  color: #999;
+}
+.card-block{
+    padding: 20px 0 20px 0;
+}
+.messages {
+  list-style: none;
+  padding: 0px 10px 0 10px;
+  margin: 0;
+  height: 347px;
+  overflow: scroll;
+}
+.messages .message {
+  clear: both;
+  overflow: hidden;
+  margin-bottom: 20px;
+  transition: all 0.5s linear;
+}
+.messages .message.left .avatar {
+  background-color: #f5886e;
+  float: left;
+}
+.messages .message.left .text_wrapper {
+  background-color: #ffe6cb;
+  margin-left: 20px;
+}
+.messages .message.left .text_wrapper::after, .messages .message.left .text_wrapper::before {
+  right: 100%;
+  border-right-color: #ffe6cb;
+}
+.messages .message.left .username, .time {
+  color: #c48843;
+}
+.messages .message.left .text {
+  color: #000;
+}
+.messages .message.right .avatar {
+  background-color: #23b4ff;
+  float: right;
+}
+.messages .message.right .username {
+   color: #45829b;
+}
+.messages .message.right .time {
+   color: #45829b;
+}
+.messages .message.right .text_wrapper {
+  background-color: #c7eafc;
+  margin-right: 20px;
+  float: right;
+}
+.messages .message.right .text_wrapper::after, .messages .message.right .text_wrapper::before {
+  left: 100%;
+  border-left-color: #c7eafc;
+}
+.messages .message.right .text {
+  color: #000;
+}
+.messages .message .avatar {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  display: inline-block;
+
+}
+.messages .message .avatar.yoda {
+  background: image-url('yoda.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+.messages .message .avatar.valley {
+  background: image-url('valley.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+.messages .message .avatar.binary {
+  background: image-url('binary.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+.messages .message .text_wrapper {
+  display: inline-block;
+  padding: 20px;
+  border-radius: 6px;
+  width: calc(100% - 85px);
+  min-width: 100px;
+  position: relative;
+  word-wrap: break-word;
+}
+.messages .message .text_wrapper::after, .messages .message .text_wrapper:before {
+  top: 18px;
+  border: solid transparent;
+  content: " ";
+  height: 0;
+  width: 0;
+  position: absolute;
+  pointer-events: none;
+}
+.messages .message .text_wrapper::after {
+  border-width: 13px;
+  margin-top: 0px;
+}
+.messages .message .text_wrapper::before {
+  border-width: 15px;
+  margin-top: -2px;
+}
+.messages .message .text_wrapper .text {
+  font-size: 16px;
+  font-weight: 300;
+}
+.messages .message .text_wrapper .username {
+  font-size: 18px;
+  font-weight: 400;
+}
+.messages .message .text_wrapper .time {
+  font-size: 12px;
+  font-weight: 200;
+}
+.messages .message.notification{
+  display: inline-block;
+  padding: 5px;
+  border-radius: 10px;
+  width: calc(100%);
+  min-width: 100px;
+  position: relative;
+  word-wrap: break-word;
+  margin: 0px;
+}
+.messages .message.activate{
+  background-color: #def0de;
+  color: #5cb85c;
+}
+.messages .message.deactivate{
+  background-color: #e0e0e0;
+  color: #959595;
+}
+.messages .message .status_text {
+  font-size: 12px;
+  font-weight: 200;
+}
+.help-block{
+  font-size: 12px;
+  font-weight: 200;
+  color: #999;
+}
+#users .list-group-item .avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: inline-block;
+  background-color: #eee;
+  min-width: 40px;
+}
+#users .list-group-item .name {
+  font-size: 18px;
+  font-weight: 400;
+  color: #999;
+}
+#users .list-group-item .avatar.yoda {
+  background: image-url('yoda.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+#users .list-group-item .avatar.valley {
+  background: image-url('valley.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+#users .list-group-item .avatar.binary {
+  background: image-url('binary.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+}

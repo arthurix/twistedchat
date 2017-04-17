@@ -1,23 +1,14 @@
-<div class="col-4 text-center mx-auto">
-    <div class="card">
-        <div class="card-header">Authentication</div>
-        <%= form_for(User.new, url: login_path) do |f| %>
-            <div class="card-block">
-                <div class="form-group">
-                    <%=f.label :username%>
-                    <div class="input-group">
-                        <span class="input-group-addon">@</span>
-                        <%= f.text_field :username, class: "form-control" -%>
-                    </div>
-                </div>
-                <div class="form-group">
-                    <%= f.select :dialect, [['Yoda', 'yoda'], ['Valley', 'valley'], ['Binary', 'binary']], {}, {class: "form-control"} %>
-                </div>
-
-            </div>
-            <div class="card-footer">
-                <%= f.submit "Enter", class: "btn btn-primary" %>
-            </div>
-        <% end %>
+<%= form_for(User.new, url: login_path, html: {class: 'form-signin'}) do |f| %>
+    <h2 class="form-signin-heading">Authentication</h2>
+    <div class="input-group">
+        <div class="input-group-addon">@</div>
+        <%= f.text_field :username, class: "form-control", value: @user.username -%>
     </div>
-</div>
+    <div class="form-group">
+        <%= f.select :dialect,
+        User::DIALECTS.map { |value| [ value.capitalize, value ] },
+        {}, {class: "form-control"} %>
+    </div>
+    <%= f.submit "Enter", class: "btn btn-large btn-primary btn-block" %>
+
+<% end %>

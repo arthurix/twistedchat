@@ -1,0 +1,2 @@
+class Valley < Base
+end
