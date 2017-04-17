@@ -1,0 +1,11 @@
+default: &default
+  base_uri: 'http://www.degraeve.com/cgi-bin/babel.cgi'
+
+development:
+  <<: *default
+
+test:
+  <<: *default
+
+production:
+  base_uri: <%=ENV['API_URI']%>
