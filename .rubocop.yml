@@ -1,0 +1,17 @@
+Documentation:
+  Enabled: false
+
+Metrics/LineLength:
+  Max: 120
+
+Metrics/AbcSize:
+  Max: 20
+
+AllCops:
+  Exclude:
+    - 'docker/*'
+    - 'cache/**/*'
+    - 'vendor/**/*'
+    - 'db/**/*'
+    - 'bin/*'
+    - 'built/**/*'

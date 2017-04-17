@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170412093043) do
+ActiveRecord::Schema.define(version: 20170414195723) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -24,13 +24,10 @@ ActiveRecord::Schema.define(version: 20170412093043) do
     t.string   "dialect"
   end
 
-  create_table "sessions", force: :cascade do |t|
-    t.string   "session_id", null: false
-    t.text     "data"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.index ["session_id"], name: "index_sessions_on_session_id", unique: true, using: :btree
-    t.index ["updated_at"], name: "index_sessions_on_updated_at", using: :btree
+  create_table "user_activities", force: :cascade do |t|
+    t.string "username"
+    t.string "dialect"
+    t.string "status"
   end
 
 end

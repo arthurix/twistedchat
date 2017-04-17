@@ -1,24 +1,23 @@
-# README
+# TwistedChat
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Description
 
-Things you may want to cover:
+* This is a simple web application that works as an Instant messaging application.
+* All the instant messages can be translated to one of three possible dialects (Yoda, Valley Girl and Binary Code) to make the instant messaging conversation more colorful :)
 
-* Ruby version
 
-* System dependencies
+## Requirements
+* Ruby 2.3.1
+* Docker 17.03.1
 
-* Configuration
+## Docker usage
+```bash
+$ make development
+```
 
-* Database creation
+## Tests
+```bash
+$ bundle exec rspec
+```
 
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+## Demo on Heroku

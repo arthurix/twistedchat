@@ -12,10 +12,13 @@
 /db/*.sqlite3-journal
 
 # Ignore all logfiles and tempfiles.
+/coverage/*
 /log/*
+/cache
 /tmp/*
 !/log/.keep
 !/tmp/.keep
+.DS_Store
 
 # Ignore Byebug command history file.
 .byebug_history
