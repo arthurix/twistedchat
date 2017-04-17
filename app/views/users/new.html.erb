@@ -1,4 +1,4 @@
-<%= form_for(User.new, url: login_path, html: {class: 'form-signin'}) do |f| %>
+<%= form_for(User.new, url: login_path, authenticity_token: true, html: {class: 'form-signin'}) do |f| %>
     <h2 class="form-signin-heading">Authentication</h2>
     <div class="input-group">
         <div class="input-group-addon">@</div>

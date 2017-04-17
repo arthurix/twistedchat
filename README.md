@@ -1,5 +1,7 @@
 # TwistedChat
 
+[![codecov](https://codecov.io/gh/arthurix/twistedchat/branch/master/graph/badge.svg)](https://codecov.io/gh/arthurix/twistedchat)
+
 ## Description
 
 * This is a simple web application that works as an Instant messaging application.
