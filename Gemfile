@@ -1,10 +1,5 @@
 source 'https://rubygems.org'
 
-git_source(:github) do |repo_name|
-  repo_name = "#{repo_name}/#{repo_name}" unless repo_name.include?("/")
-  "https://github.com/#{repo_name}.git"
-end
-
 gem 'rails', '~> 5.0.2'
 gem 'activerecord-session_store', '~> 1.0.0'
 gem 'pg'
@@ -30,4 +25,15 @@ group :development do
   gem 'listen', '~> 3.0.5'
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
+end
+
+group :test do
+  gem 'simplecov', :require => false
+  gem 'rspec-rails', '~> 3.5', '>= 3.5.2'
+  gem 'rails-controller-testing'
+end
+
+group :development, :test do
+  gem 'byebug', platform: :mri
+  gem 'pry-byebug'
 end
