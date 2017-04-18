@@ -26,6 +26,7 @@ group :test do
   gem 'simplecov', :require => false
   gem 'rspec-rails', '~> 3.5', '>= 3.5.2'
   gem 'rails-controller-testing'
+  gem 'codecov', :require => false, :group => :test
 end
 
 group :development, :test do
